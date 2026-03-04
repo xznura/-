@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Официальное приглашение — 8 Марта</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            /* Чтобы салют был поверх всего, но не мешал кликам */
+            position: relative;
+        }
+
+        /* Нежный весенний фон */
+        .background {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2; /* Самый нижний слой */
+            background: radial-gradient(circle at 50% 50%, #fff 0%, #fffafa 100%);
+        }
+
+        /* Контейнер для салюта (скрыт, но работает поверх всего) */
+        #fireworks-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; /* Между фоном и контентом */
+            pointer-events: none; /* Чтобы можно было кликать на текст и фото */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Контент поверх салюта */
+        }
+
+        h1 {
+            font-family: 'Marck Script', cursive;
+            font-size: clamp(3rem, 10vw, 5rem);
+            color: #d81b60;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .invite-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(216, 27, 96, 0.1);
+            border: 1px solid #fce4ec;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        .invite-box p { font-size: 1.2rem; margin: 10px 0; }
+
+        .event-details {
+            display: inline-block;
+            background: #fff5f8;
+            padding: 25px 40px;
+            border-radius: 20px;
+            color: #ad1457;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 30px 0;
+            border: 2px dashed #d81b60;
+        }
+
+        /* Галерея Полароид */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px 15px 45px 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 280px;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Эффект разбросанных снимков */
+        .polaroid:nth-child(4n+1) { transform: rotate(-3deg); }
+        .polaroid:nth-child(4n+2) { transform: rotate(2deg) translateY(-15px); }
+        .polaroid:nth-child(4n+3) { transform: rotate(-1.5deg) translateY(10px); }
+        .polaroid:nth-child(4n+4) { transform: rotate(3deg); }
+
+        .polaroid:hover {
+            transform: scale(1.1) rotate(0deg) !important;
+            z-index: 10;
+            box-shadow: 0 25px 50px rgba(216, 27, 96, 0.2);
+        }
+
+        footer {
+            margin-top: 80px;
+            font-family: 'Marck Script', cursive;
+            font-size: 2.5rem;
+            color: #d81b60;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="background"></div>
+<div id="fireworks-container"></div>
+
+<div class="container">
+    <h1>Официальное приглашение</h1>
+
+    <div class="invite-box">
+        <p><strong>Дорогие и уважаемые наши одноклассницы!</strong></p>
+        <p>От всей души поздравляем вас с наступающим праздником —<br>
+        Международным женским днём 8 Марта!</p>
+
+        <div class="event-details">
+            📅 7 марта в 17:00 <br>
+            📍 №9 "Зерде" школа 141 кабинет
+        </div>
+
+        <p>В программе вечера — поздравления, тёплые слова,<br>
+        приятные сюрпризы и хорошее настроение.</p>
+        
+        <p>Будем искренне рады видеть каждую из вас!</p>
+    </div>
+
+    <div class="gallery">
+        <div class="polaroid"><img src="1.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="2.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="3.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="4.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="5.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="6.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="7.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="8.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="9.jpeg" alt="Classmate"></div>
+        <div class="polaroid"><img src="10.jpeg" alt="Classmate"></div>
+    </div>
+
+    <footer>Ваши одноклассники 🌸</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+
+<script>
+    // 1. Настройка салюта
+    const container = document.getElementById('fireworks-container');
+    const fireworks = new Fireworks.Fireworks(container, {
+        autoresize: true,
+        opacity: 0.5,
+        acceleration: 1.05,
+        friction: 0.97,
+        gravity: 1.5,
+        particles: 50,
+        traceLength: 3,
+        traceSpeed: 10,
+        explosion: 5,
+        intensity: 30,
+        flickering: 50,
+        lineStyle: 'round',
+        hue: { min: 0, max: 360 }, // Все цвета радуги
+        delay: { min: 30, max: 60 },
+        rocketsPoint: { min: 50, max: 50 },
+        lineWidth: { explosion: { min: 1, max: 3 }, trace: { min: 1, max: 2 } },
+        brightness: { min: 50, max: 80 },
+        decay: { min: 0.015, max: 0.03 },
+        mouse: { click: true, move: false, max: 1 } // Салют по клику мыши
+    });
+
+    // 2. Старт салюта при загрузке
+    fireworks.start();
+
+    // 3. Автоматическая остановка через 10 секунд, чтобы не мешал
+    setTimeout(() => {
+        fireworks.stop();
+        // Но салют по клику продолжит работать, потому что mouse.click: true
+    }, 10000); 
+
+</script>
+
+</body>
+</html>
